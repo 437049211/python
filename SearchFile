@@ -1,0 +1,21 @@
+#!/usr/bin/python
+Path = ""
+# Add folders
+FileList = []
+# Add list of File
+import os
+# import system 
+
+def SearchFile(FolderPath):
+    FolderOrDocuments = os.listdir(FolderPath)
+    for a in FolderOrDocuments:
+        FullPath = os.path.join(FolderPath,a)
+        if os.path.isdir(FullPath):
+            SearchFile(FullPath)
+        else:
+            print(a)
+            global FileList
+            FileList.append(a)
+
+SearchFile(path)
+print(FileList)
