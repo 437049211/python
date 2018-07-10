@@ -6,7 +6,7 @@ FileList = []
 import os
 # import system 
 
-def SearchFile(FolderPath):
+def SearchFiles(FolderPath):
     FolderOrDocuments = os.listdir(FolderPath)
     for a in FolderOrDocuments:
         FullPath = os.path.join(FolderPath,a)
@@ -17,5 +17,5 @@ def SearchFile(FolderPath):
             global FileList
             FileList.append(a)
 
-SearchFile(path)
+SearchFiles(path)
 print(FileList)
